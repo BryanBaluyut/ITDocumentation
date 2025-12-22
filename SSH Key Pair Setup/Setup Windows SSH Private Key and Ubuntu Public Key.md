@@ -48,3 +48,9 @@ chmod 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys
 # Open a command prompt and type. It should use the username you setup in "$HOME\.ssh\config"
 
 SSH UbunterServerHostname
+
+# Your Ubuntu server keeps a detailed record of every login. You can check the most recent entries in the authentication log to see the method used.
+
+sudo journalctl -u ssh -n 20 --no-pager
+
+# If you used a key: You will see a line that says: Accepted publickey your username from IP
