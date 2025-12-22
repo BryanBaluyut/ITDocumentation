@@ -1,5 +1,6 @@
-1.  On your Windows Machine
-Powershell
+1.  Generate Private Key on your Windows Machine
+
+# On your Windows Machine open Powershell
 ssh-keygen -t ed25519 -C "your_email@example.com"
 
 # File location: Press Enter to save it in the default location (~/.ssh/id_ed25519).
