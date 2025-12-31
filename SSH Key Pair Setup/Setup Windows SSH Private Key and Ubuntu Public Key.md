@@ -42,7 +42,16 @@ nano ~/.ssh/authorized_keys
 # Set permissions: 
 chmod 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys
 
-3. Test the Connection
+4. Run this command to see if any other file is enabling password authentication:
+
+grep -r "PasswordAuthentication" /etc/ssh/sshd_config.d/
+
+sudo grep "PasswordAuthentication" /etc/ssh/sshd_config.d/50-cloud-init.conf
+sudo nano /etc/ssh/sshd_config.d/50-cloud-init.conf
+
+# Change the setting: Find the line PasswordAuthentication yes and change it to no
+
+5. Test the Connection
 # Try logging in from your local machine. You should no longer be asked for your VPS account password (though you will be asked for your key passphrase if you set one).
 
 # Open a command prompt and type. It should use the username you setup in "$HOME\.ssh\config"
