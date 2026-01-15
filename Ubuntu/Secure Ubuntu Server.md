@@ -23,6 +23,15 @@ sudo nano /etc/ssh/sshd_config
 PermitRootLogin no
 PasswordAuthentication no
 
+# You may also need to check sshd_config.d if your changes aren't working
+
+ls /etc/ssh/sshd_config.d/
+
+#if it exist you will need to edit the values there 
+
+PermitRootLogin no
+PasswordAuthentication no
+
 # Before restarting the service, it is a best practice to test the configuration for syntax errors.
 
 sudo sshd -t
@@ -81,4 +90,5 @@ sudo fail2ban-client status sshd
 sudo fail2ban-client set sshd unbanip <IP-ADDRESS>
 
 # Manually ban an IP	
+
 sudo fail2ban-client set sshd banip <IP-ADDRESS>
