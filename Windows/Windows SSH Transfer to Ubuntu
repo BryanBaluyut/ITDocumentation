@@ -1,0 +1,1 @@
+scp WindowFile.file <username>@nserver:~/
